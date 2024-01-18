@@ -15,18 +15,15 @@ function drawLineChart(xValues, yValues) {
             labels: xValues,
             datasets: [{
                 fill: false,
-                lineTension: 0.9,
+                lineTension: 0.5,
                 backgroundColor: "rgba(0,0,255,1.0)",
                 borderColor: "rgba(0,0,255,0.1)",
                 data: yValues,
-                // popointRadius: 0
+
             }]
         },
         options: {
             legend: { display: false },
-            // scales: {
-            //     yAxes: [{ ticks: { min: 6, max: 16 } }],
-            // }
         }
     });
 }
