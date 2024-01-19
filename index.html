@@ -7,7 +7,7 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Custom CSS -->
-  <link rel="stylesheet" src="./assets/style/style.css">
+  <link rel="stylesheet" href="./assets/style/style.css">
 
   <!-- chart.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -21,8 +21,55 @@
 </head>
 
 <body>
-  <div class="bg-blue-500 text-white p-4">Hello, world!</div>
+  <!-- Nav Section -->
+  <header>
+    <nav class="flex items-center justify-between flex-wrap bg-mirage p-6">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M27.3283 0.666626L26.9177 1.00098L22.5092 4.37836L21.7242 4.96665L22.5092 5.5761L39.688 18.7259L34.1966 36.4889L33.8986 37.4708H40.8434L41.0125 36.9629L47.305 16.6267L47.454 16.1145L47.0434 15.8014L27.7389 1.00098L27.3283 0.666626ZM20.3795 6.04589L19.9689 6.35908L0.628234 21.0833L0.213562 21.4134L0.366548 21.9255L2.04537 27.3809L2.34329 28.3459L3.12835 27.7534L20.3433 14.6036L34.7401 25.5949L35.5251 26.1832L35.823 25.2225L37.5019 19.767L37.6508 19.2549L37.2402 18.9206L20.7902 6.35908L20.3795 6.04589ZM20.1178 16.5462L19.7072 16.8594L3.24107 29.4251L2.83043 29.7553L2.97939 30.2674L10.3187 54.1545L10.4837 54.6666H17.4325L17.1306 53.6847L10.5763 32.447L24.957 21.4557L25.7381 20.8463L24.957 20.2368L20.5285 16.8594L20.1178 16.5462ZM48.5933 16.9187L48.2954 17.8836L41.7211 39.1383H22.9763L23.2742 40.1202L24.9731 45.5968L25.1422 46.1089H46.4837L46.6528 45.5968L54.0646 21.7308L54.2136 21.2187L53.8029 20.8844L49.3784 17.507L48.5933 16.9187ZM18.0284 28.9723L17.2433 29.5606L12.8188 32.938L12.4081 33.2723L12.5571 33.7802L18.8295 54.1164L18.9986 54.6285H19.5019L43.3838 54.6666H43.887L44.0561 54.1545L45.7551 48.6991L46.053 47.7172H23.8177L18.3263 29.933L18.0284 28.9723Z"
+            fill="white" />
+        </svg>
+        <span class="font-semibold text-xl tracking-tight">F I N X</span>
+      </div>
+      <div class="block lg:hidden">
+        <button
+          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div class="w-full block lg:flex lg:items-center lg:w-auto">
+        <h2 class="text-3xl font-semibold text-white">Finance Dashboard</h2>
+      </div>
+      <form id="stock-form">
+          <div>
+            <input type="text" id="ticker-code"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm uppercase rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Stock Ticker Code" required>
+          </div>
+      </form>
+    </nav>
+  </header>
 
+  <!-- Graph Data Section -->
+  <main>
+
+    <!-- Need to add <aside> for left side content -->
+
+    <div class="m-2 chart">
+      <canvas id="line-chart" style="width:100%;max-width:600px"></canvas>
+    </div>
+
+    <!-- Need to add <aside> for right side content -->
+    <!-- Add Footer -->
+
+  </main>
+
+<<<<<<< HEAD
   <div class="chart">
     <canvas id="line-chart" style="width:100%;max-width:600px"></canvas>
   </div>
@@ -33,6 +80,9 @@
   <div id="candle-chart" style="height:400px; max-width:950px;  
   margin:0px auto;">
   </div>
+=======
+
+>>>>>>> e2117076715d6d20c2b9ec80e08f73b86b0f481a
 
   <!-- Day.js Script -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
