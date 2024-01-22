@@ -9,6 +9,8 @@ window.onload = function () {
     if (thicker !== "") {
       console.log("submited");
       renderGraph(thicker);
+      fundamentalData(thicker);
+      forexPrice();
       ElemInp.val("");
     }
     else {
