@@ -8,68 +8,19 @@ const options = {
   }
 };
 
-
-function ChartData(thicker, interval) {
+function ChartDataCanvasjs(thicker) {
   // variables to store the informations to perform the API call and data search
   let queryURL = url + `function=TIME_SERIES_DAILY_ADJUSTED&symbol=${thicker}&datatype=json&outputsize=full`;
-  let keySearh = "Time Series (Daily)";
-  let size = 'day';
-
 
   // call the API 
-  fetch(queryURL, options)
+  return fetch(queryURL, options)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      // Test if the API return the value for the correct thicker code
-      // If error print the message in the console log to help on the debug process 
-      try {        
-        if (data["Meta Data"]["2. Symbol"] === thicker) {
-          console.log(data["Meta Data"]["2. Symbol"]);
-          console.log(data);
-          if (size === "day") {
-            // check if it contains the real date, 
-            // if not, take the one from the previous day.
-            // using inline
-            let dateSearch = (Object.keys(data[keySearh]).includes(dayjs().format('YYYY-MM-DD 10:00:00')) ? dayjs().format('YYYY-MM-DD') : dayjs().subtract(1, 'day').format('YYYY-MM-DD'));
-            // variable to store values of the X and Y axes. 
-            let dataOut = { 'axeX': [], 'axeY': [] };
-            $.each(data[keySearh], function (i, v) {
-              if (i.substring(0, 10) == dateSearch) {
-                dataOut.axeX.push(i);
-                dataOut.axeY.push(v);
-              }
-            })
-            // Reverse the sequence of date time come from the API
-            dataOut.axeX = dataOut.axeX.reverse();
-            dataOut.axeY = dataOut.axeY.reverse();
-            console.log(dataOut);
-            return dataOut;
-          }
-          else {
-            let dataOut = { 'axeX': [], 'axeY': [] };
-            let KeyArray = Object.keys(data[keySearh]);
-
-            // check if the stock thicker have the enouh historical data regards the section,
-            // otherwise take the max data retrived by the API.  
-            let checkSize = (Object.keys(data[keySearh]).length < size ? Object.keys(data[keySearh]).length : size);
-            for (let i = 0; i < checkSize; i++) {
-              dataOut.axeX.push(KeyArray[i]);
-              dataOut.axeY.push(data[keySearh][KeyArray[i]]);
-            }
-            dataOut.axeX = dataOut.axeX.reverse();
-            dataOut.axeY = dataOut.axeY.reverse();
-            return dataOut;
-          }
-        }
-      }
-      // print the message error in the console log to help on the debug process
-      catch (error) {
-        console.log(`API return Erro: ${error}`);
-        console.log(data);
-      }
-    })
+      return data;
+    }
+    )
 }
 
 function formatNumber(number) {
@@ -112,8 +63,6 @@ function fundamentalData(thicker){
     console.log("Net Income: ");
     console.log("PE Ratio: " + data[0].peRatioTTM.toFixed(2));
     console.log(`Dividend: $${data[0].dividendPerShareTTM} (${data[0].dividendYieldPercentageTTM.toFixed(2)}%)`)
-
-
 
     console.log(data);
   })
