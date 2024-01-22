@@ -1,8 +1,10 @@
-* {
-    margin: 0%;
-    padding: 0;
+body {
+    margin: 0px;
+    padding: 0px;
 }
 
 .bg-mirage {
     background-color: #17142a;
 }
+
+.fluid{position:relative; top:10px; float:left; left:-170px;}
