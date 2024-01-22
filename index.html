@@ -57,31 +57,269 @@
 
   <!-- Graph Data Section -->
   <main>
+    <div class="grid grid-cols-5 p-2 gap-2">
+      <!-- Left side content -->
+      <aside class="col-span-2 flex">
+        <div class="col-span-1">
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Market Cap
+              </p>
+            </div>
 
-    <!-- Need to add <aside> for left side content -->
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                2.84T
+              </p>
+            </div>
+          </div>
 
-    <div class="m-2 chart">
-      <canvas id="line-chart" style="width:100%;max-width:600px"></canvas>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Revenue (ttm)
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                383.29B
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Net Income (ttm)
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                97.00B
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Shares Out
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                15.46B
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                EPS (ttm)
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                6.13
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                PE Ratio
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                29.96
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Forward PE
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                27.54
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Dividend
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                $0.96 (0.52%)
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Ex-Dividend Date
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                Nov 10, 2023
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1">
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Volume
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                53,332,117
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Open
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                182.16
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Previous Close
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                185.92
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Day's Range
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                180.93 - 184.26
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                52-Week Range
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                133.77 - 199.62
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Beta
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                1.29
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Analysts
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                Buy
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Price Target
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                197.85 (17.74%)
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 border-b">
+            <div class="flex items-center gap-3 p-2.5">
+              <p class="hidden font-small font-semibold sm:block">
+                Earnings Date
+              </p>
+            </div>
+
+            <div class="flex items-center justify-end p-2.5">
+              <p class="font-small">
+                Feb 1, 2024
+              </p>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="col-span-2 chart">
+        <canvas id="line-chart" style="width:100%;max-width:600px"></canvas>
+      </div>
+      <div class="col-span-1 w-12 h-12 bg-teal-500"></div>
+    </div>
+    <div class="chart">
+      <div id="candle-chart" style="width:100%;max-width:600px"></div>
     </div>
 
     <!-- Need to add <aside> for right side content -->
     <!-- Add Footer -->
 
   </main>
-
-  <div class="chart">
-    <div id="line-chart" style="width:100%;max-width:600px"></div>
-  </div>
-  <div class="chart">
-    <div id="candle-chart" style="width:100%;max-width:600px"></div>
-  </div>
-  <!-- new -->
-  <!-- <div class="chart">
-    <canvas id="candle-chart" style="width:100%;max-width:600px"></canvas>
-  </div> -->
-  <!-- <div id="candle-chart" style="height:400px; max-width:950px;  
-  margin:0px auto;">
-  </div> -->
 
   <!-- Day.js Script -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
