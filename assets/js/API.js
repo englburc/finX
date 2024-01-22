@@ -8,39 +8,13 @@ const options = {
   }
 };
 
+
 function ChartData(thicker, interval) {
   // variables to store the informations to perform the API call and data search
   let queryURL = url + `function=TIME_SERIES_DAILY_ADJUSTED&symbol=${thicker}&datatype=json&outputsize=full`;
   let keySearh = "Time Series (Daily)";
   let size = 'day';
 
-  // 
-  switch (interval) {
-    case "1D":
-      queryURL = url + `interval=15min&function=TIME_SERIES_INTRADAY&symbol=${thicker}&datatype=json&outputsize=compact`
-      keySearh = "Time Series (15min)";
-      break;
-    case "1W":
-      queryURL = url + `function=TIME_SERIES_DAILY_ADJUSTED&symbol=${thicker}&datatype=json&outputsize=compact`
-      size = '7';
-      break;
-    case "1M":
-      queryURL = url + `function=TIME_SERIES_DAILY_ADJUSTED&symbol=${thicker}&datatype=json&outputsize=compact`
-      size = '30';
-      break;
-    case "1Y":
-      size = '365';
-      break;
-    case "5Y":
-      size = '1825';
-      break;
-    case "MAX":
-      size = '3650';
-      break;
-    default:
-      return null;
-      break;
-  }
 
   // call the API 
   fetch(queryURL, options)
@@ -145,10 +119,3 @@ function fundamentalData(thicker){
   })
 }
 
-
-// Options to interval parameter, needs to be storage inside a data-interval in the button 
-// 1D, 1W, 1M, 1Y, 5Y, MAX 
-//console.log(ChartData("AAPL", "1D"));
-
-
-fundamentalData("AAPL");

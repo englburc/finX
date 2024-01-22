@@ -9,10 +9,17 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/style/style.css">
 
+    <!-- Day.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <!-- jQuery Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <!-- day.js -->
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
+    <!-- CDN to isBetween plugin of day.js start -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/isBetween.js"></script>
+    <script>dayjs.extend(window.dayjs_plugin_isBetween)</script>
+    <!-- CDN to isBetween plugin of day.js end -->
 
     <title>FinX - Finance Dashboard</title>
 </head>
@@ -67,13 +74,11 @@
     </main>
 
 
-    <!-- Day.js Script -->
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <!-- jQuery Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Custom JS -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/API.js"></script>
+    <script src="./assets/js/Graph.js"></script>
 
 
 </body>
