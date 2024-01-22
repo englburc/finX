@@ -9,6 +9,7 @@ window.onload = function () {
     if (thicker !== "") {
       console.log("submited");
       renderGraph(thicker);
+      fundamentalData(thicker);
       ElemInp.val("");
     }
     else {
