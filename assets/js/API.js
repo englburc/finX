@@ -10,6 +10,7 @@ const options = {
 const ElemFDH = $("#fundamental-data-header");
 const ElemFDL = $("#fundamental-data-left");
 const ElemFDR = $("#fundamental-data-right");
+const ElemForex = $("#forex-price");
 
 function ChartDataCanvasjs(thicker) {
   // variables to store the informations to perform the API call and data search
@@ -46,7 +47,7 @@ function fundamentalData(thicker) {
       const beta = $("<p class='m-2'>").text(`Beta ${data[0].beta}`);
       const volume = $("<p class='m-2'>").text(`Volume ${data[0].volAvg}`);
       const dayRange = $("<p class='m-2'>").text(`Day Range ${data[0].range}`);
-      const open = $("<p class='m-2'>").text(`Open ${data[0].price - data[0].changes}`);
+      const open = $("<p class='m-2'>").text(`Open ${(data[0].price - data[0].changes).toFixed(1)}`);
 
       ElemFDH.append(compName);
       ElemFDR.append(volume, open, dayRange, beta);
@@ -73,16 +74,38 @@ function fundamentalData(thicker) {
         notation: 'compact',
         compactDisplay: 'short'
       }));
+      const peRatio = $("<p class='m-2'>").text(`PE Ratio: ${data[0].peRatioTTM.toFixed(2)}`);
+      const dividend = $("<p class='m-2'>").text(`Dividend: $${data[0].dividendPerShareTTM} (${data[0].dividendYieldPercentageTTM.toFixed(2)}%)`);
+      ElemFDL.append(MarketCap, EnterpriseValue, peRatio, dividend);
 
 
-      ElemFDL.append(MarketCap, EnterpriseValue);
-
-
-      console.log("Revenue: ");
-      console.log("Net Income: ");
-      console.log("PE Ratio: " + data[0].peRatioTTM.toFixed(2));
-      console.log(`Dividend: $${data[0].dividendPerShareTTM} (${data[0].dividendYieldPercentageTTM.toFixed(2)}%)`)
+    //  console.log("Revenue: ");
+    //  console.log("Net Income: ");
+    //  console.log("PE Ratio: " + data[0].peRatioTTM.toFixed(2));
+    //  console.log(`Dividend: $${data[0].dividendPerShareTTM} (${data[0].dividendYieldPercentageTTM.toFixed(2)}%)`)
 
       console.log(data);
     })
+}
+
+
+function forexPrice() {
+  let APIKey = "g2PtREXHUtUFvq9TqT2kXHdmXdL3gQ0n";
+  var currecy = ['EURUSD','GBPUSD','GBPEUR'];
+  ElemForex.empty();
+  $.each(currecy, function (i, v) {
+    let queryURL = `https://financialmodelingprep.com/api/v3/fx/${v}?apikey=${APIKey}`;
+    fetch(queryURL)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const code = $("<p class='m-2'>").text(`${currecy[i]}`);
+        const variation = $("<p class='m-2'>").text(`${data[0].bid} (${(data[0].changes * 100).toFixed(2)}%)`);
+        console.log(`Price: ${data[0].bid}`);
+        console.log(`Dividend: (${(data[0].changes * 100).toFixed(2)}%)`)
+        ElemForex.append(code, variation);
+        console.log(data);
+      })
+  })
 }

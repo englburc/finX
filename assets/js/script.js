@@ -10,6 +10,7 @@ window.onload = function () {
       console.log("submited");
       renderGraph(thicker);
       fundamentalData(thicker);
+      forexPrice();
       ElemInp.val("");
     }
     else {
