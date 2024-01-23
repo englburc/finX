@@ -28,6 +28,21 @@ window.onload = function () {
   }
   showtime()
 
+  //JASON object containing history
+  const history = {
+    history: "history"
+  };
+  console.log({ history })
+  //delete previous data before saving new history
+  localStorage.clear();
+  //save history to local storage
+  localStorage.setItem("history", JSON.stringify(history));
+  console.log({ localStorage })
+
+  // get JASON from local storage
+  const historyFromLocalStorage = JSON.parse(localStorage.getItem("history"));
+  console.log({ historyFromLocalStorage })
+
 }
 
 
