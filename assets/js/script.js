@@ -43,6 +43,7 @@ window.onload = function () {
   const historyFromLocalStorage = JSON.parse(localStorage.getItem("history"));
   console.log({ historyFromLocalStorage })
 
+
 }
 
 
