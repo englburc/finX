@@ -44,7 +44,7 @@ function fundamentalData(thicker) {
       ElemFDH.empty();
       ElemFDR.empty();
       ElemFDL.empty();
-      const compName = $("<p class='m-2'>").text(`${data[0].companyName} (${data[0].symbol})`);
+      const compName = $("<p class='m-2 fs-5'>").text(`${data[0].companyName} (${data[0].symbol})`);
       const price = $("<span>").text(`  ${data[0].price} (${(((data[0].price / (data[0].price - data[0].changes)) - 1) * 100).toFixed(2)}%)`);
       compName.append(price);
 
