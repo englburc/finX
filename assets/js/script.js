@@ -7,7 +7,7 @@ window.onload = function () {
     e.preventDefault();
     const thicker = ElemInp.val().trim();
     if (thicker !== "") {
-      console.log("submited");
+      console.log("submitted");
       renderGraph(thicker);
       fundamentalData(thicker);
       forexPrice();
@@ -21,3 +21,19 @@ window.onload = function () {
 
 }
 
+
+// get the current date and time as a string
+
+
+// console.log(currentDateTime);
+
+
+function showtime() {
+  const timeInterval = setInterval(function () {
+    const currentDateTime = dayjs().format('YYYY-MM-DD HH:mm');
+    $('#timer').val(currentDateTime);
+    console.log(currentDateTime);
+  }, 60000);
+}
+
+console.log(showtime())
