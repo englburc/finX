@@ -1,5 +1,5 @@
 const APIKey = '3be0c4ff92mshf3ed26e5ff73578p1884ecjsn26894e084b86';
-const APIKey2 = "TcSAvBTZl318Z8WuUz8XSJQFRnjScxv6";
+const APIKey2 = "5ab31f1e6c6bcfdebd17fc608c2d7123";
 // Use it just in the appresentation
 //const APIKey2 = "g2PtREXHUtUFvq9TqT2kXHdmXdL3gQ0n";
 
@@ -33,7 +33,7 @@ function ChartDataCanvasjs(thicker) {
 
 
 function fundamentalData(thicker) {
-  
+
 
   let queryURL = `https://financialmodelingprep.com/api/v3/profile/${thicker}?apikey=${APIKey2}`;
   fetch(queryURL)
@@ -83,10 +83,10 @@ function fundamentalData(thicker) {
       ElemFDL.append(MarketCap, EnterpriseValue, peRatio, dividend);
 
 
-    //  console.log("Revenue: ");
-    //  console.log("Net Income: ");
-    //  console.log("PE Ratio: " + data[0].peRatioTTM.toFixed(2));
-    //  console.log(`Dividend: $${data[0].dividendPerShareTTM} (${data[0].dividendYieldPercentageTTM.toFixed(2)}%)`)
+      //  console.log("Revenue: ");
+      //  console.log("Net Income: ");
+      //  console.log("PE Ratio: " + data[0].peRatioTTM.toFixed(2));
+      //  console.log(`Dividend: $${data[0].dividendPerShareTTM} (${data[0].dividendYieldPercentageTTM.toFixed(2)}%)`)
 
       console.log(data);
     })
@@ -94,7 +94,7 @@ function fundamentalData(thicker) {
 
 
 function forexPrice() {
-  var currecy = ['EURUSD','GBPUSD','GBPEUR'];
+  var currecy = ['EURUSD', 'GBPUSD', 'GBPEUR'];
   ElemForex.empty();
   $.each(currecy, function (i, v) {
     let queryURL = `https://financialmodelingprep.com/api/v3/fx/${v}?apikey=${APIKey2}`;
@@ -112,7 +112,7 @@ function forexPrice() {
 
 
 function indexPrice() {
-  var currecy = [['SPY','S&P 500'],['',''],['','']];
+  var currecy = [['SPY', 'S&P 500'], ['', ''], ['', '']];
   $.each(currecy, function (i, v) {
     let queryURL = `https://financialmodelingprep.com/api/v3/profile/${v[0]}?apikey=${APIKey2}`;
     fetch(queryURL)
