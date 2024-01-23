@@ -1,4 +1,8 @@
 const APIKey = '3be0c4ff92mshf3ed26e5ff73578p1884ecjsn26894e084b86';
+const APIKey2 = "TcSAvBTZl318Z8WuUz8XSJQFRnjScxv6";
+// Use it just in the appresentation
+//const APIKey2 = "g2PtREXHUtUFvq9TqT2kXHdmXdL3gQ0n";
+
 const url = 'https://alpha-vantage.p.rapidapi.com/query?';
 const options = {
   method: 'GET',
@@ -29,9 +33,9 @@ function ChartDataCanvasjs(thicker) {
 
 
 function fundamentalData(thicker) {
-  let APIKey = "g2PtREXHUtUFvq9TqT2kXHdmXdL3gQ0n";
+  
 
-  let queryURL = `https://financialmodelingprep.com/api/v3/profile/${thicker}?apikey=${APIKey}`;
+  let queryURL = `https://financialmodelingprep.com/api/v3/profile/${thicker}?apikey=${APIKey2}`;
   fetch(queryURL)
     .then(function (response) {
       return response.json();
@@ -55,7 +59,7 @@ function fundamentalData(thicker) {
     });
 
 
-  queryURL = `https://financialmodelingprep.com/api/v3/key-metrics-ttm/${thicker}?apikey=${APIKey}`;
+  queryURL = `https://financialmodelingprep.com/api/v3/key-metrics-ttm/${thicker}?apikey=${APIKey2}`;
   fetch(queryURL)
     .then(function (response) {
       return response.json();
@@ -90,11 +94,10 @@ function fundamentalData(thicker) {
 
 
 function forexPrice() {
-  let APIKey = "g2PtREXHUtUFvq9TqT2kXHdmXdL3gQ0n";
   var currecy = ['EURUSD','GBPUSD','GBPEUR'];
   ElemForex.empty();
   $.each(currecy, function (i, v) {
-    let queryURL = `https://financialmodelingprep.com/api/v3/fx/${v}?apikey=${APIKey}`;
+    let queryURL = `https://financialmodelingprep.com/api/v3/fx/${v}?apikey=${APIKey2}`;
     fetch(queryURL)
       .then(function (response) {
         return response.json();
@@ -102,10 +105,24 @@ function forexPrice() {
       .then(function (data) {
         const code = $("<p class='m-2'>").text(`${currecy[i]}`);
         const variation = $("<p class='m-2'>").text(`${data[0].bid} (${(data[0].changes * 100).toFixed(2)}%)`);
-        console.log(`Price: ${data[0].bid}`);
-        console.log(`Dividend: (${(data[0].changes * 100).toFixed(2)}%)`)
         ElemForex.append(code, variation);
-        console.log(data);
+      })
+  })
+}
+
+
+function indexPrice() {
+  var currecy = [['SPY','S&P 500'],['',''],['','']];
+  $.each(currecy, function (i, v) {
+    let queryURL = `https://financialmodelingprep.com/api/v3/profile/${v[0]}?apikey=${APIKey2}`;
+    fetch(queryURL)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const code = $("<p class='m-2'>").text(`${currecy[i][1]}`);
+        const variation = $("<p class='m-2'>").text(`${(((data[0].price / (data[0].price - data[0].changes)) - 1) * 100).toFixed(2)}%`);
+        ElemForex.append(code, variation);
       })
   })
 }
