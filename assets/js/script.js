@@ -18,6 +18,17 @@ window.onload = function () {
     }
 
   })
+  $('#timer').text(dayjs().format('YYYY-MM-DD HH:mm'));
+
+  function showtime() {
+    const timeInterval = setInterval(function () {
+      // console.log('test..')
+      $('#timer').text(dayjs().format('YYYY-MM-DD HH:mm'));
+    }, 60000);
+  }
+
+  // console.log(showtime())
+  showtime()
 
 }
 
@@ -26,14 +37,7 @@ window.onload = function () {
 
 
 // console.log(currentDateTime);
+// const timer = $('#timer')
+// $('#timer').text(currentDateTime);
+// console.log(timer);
 
-
-function showtime() {
-  const timeInterval = setInterval(function () {
-    const currentDateTime = dayjs().format('YYYY-MM-DD HH:mm');
-    $('#timer').val(currentDateTime);
-    console.log(currentDateTime);
-  }, 60000);
-}
-
-console.log(showtime())
