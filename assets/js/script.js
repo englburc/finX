@@ -22,22 +22,15 @@ window.onload = function () {
 
   function showtime() {
     const timeInterval = setInterval(function () {
-      // console.log('test..')
+
       $('#timer').text(dayjs().format('YYYY-MM-DD HH:mm'));
     }, 60000);
   }
 
-  // console.log(showtime())
+
   showtime()
 
 }
 
 
-// get the current date and time as a string
-
-
-// console.log(currentDateTime);
-// const timer = $('#timer')
-// $('#timer').text(currentDateTime);
-// console.log(timer);
 
