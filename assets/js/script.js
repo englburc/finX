@@ -7,17 +7,28 @@ window.onload = function () {
     e.preventDefault();
     const thicker = ElemInp.val().trim();
     if (thicker !== "") {
-      console.log("submited");
+      console.log("submitted");
       renderGraph(thicker);
       fundamentalData(thicker);
       forexPrice();
       ElemInp.val("");
     }
     else {
-      alert("Input a valid stock thicker!");
+      alert("Input a valid stock ticker!");
     }
 
   })
+  $('#timer').text(dayjs().format('YYYY-MM-DD HH:mm'));
+
+  function showtime() {
+    const timeInterval = setInterval(function () {
+
+      $('#timer').text(dayjs().format('YYYY-MM-DD HH:mm'));
+    }, 60000);
+  }
+  showtime()
 
 }
+
+
 
