@@ -6,3 +6,7 @@
 .bg-mirage {
     background-color: #17142a;
 }
+
+.row{
+    margin-right: 0 !important;
+}
