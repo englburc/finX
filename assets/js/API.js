@@ -1,5 +1,5 @@
 const APIKey = '3be0c4ff92mshf3ed26e5ff73578p1884ecjsn26894e084b86';
-const APIKey2 = "g2PtREXHUtUFvq9TqT2kXHdmXdL3gQ0n";
+const APIKey2 = "TcSAvBTZl318Z8WuUz8XSJQFRnjScxv6";
 //TcSAvBTZl318Z8WuUz8XSJQFRnjScxv6
 // Use it just in the appresentation
 //const APIKey2 = "g2PtREXHUtUFvq9TqT2kXHdmXdL3gQ0n";
@@ -47,7 +47,6 @@ function fundamentalData(thicker) {
       ElemFDL.empty();
       const compName = $("<p class='p-2 fs-5 border-2 rounded' id='name-company'>").text(`${data[0].companyName} (${data[0].symbol})`);
       const variation = $(( (((data[0].price / (data[0].price - data[0].changes)) - 1) * 100) > 0 ? "<span class='p-2 fs-5 text-success border-2 rounded'>" : "<span class='p-2 fs-5 text-danger border-2 rounded'>")).text(` ${data[0].price} (${(((data[0].price / (data[0].price - data[0].changes)) - 1) * 100).toFixed(2)}%)`);
-//      ElemFDH.append(variation);
 
       const beta = $("<p class='m-2 pb-2 border-bottom' style='font-size: smaller'>").text(`Beta: ${data[0].beta}`);
       const volume = $("<p class='m-2 pb-2 border-bottom' style='font-size: smaller'>").text(`Volume: ${data[0].volAvg}`);
