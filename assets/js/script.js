@@ -11,6 +11,7 @@ window.onload = function () {
       renderGraph(thicker);
       fundamentalData(thicker);
       forexPrice();
+      indexPrice();
       ElemInp.val("");
     }
     else {

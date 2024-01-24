@@ -45,15 +45,17 @@ function fundamentalData(thicker) {
       ElemFDR.empty();
       ElemFDL.empty();
       const compName = $("<p class='p-2 fs-5 border-2 rounded'>").text(`${data[0].companyName} (${data[0].symbol})`);
-      const price = $("<span class='p-2 fs-5 border-2 rounded'>").text(`  ${data[0].price} (${(((data[0].price / (data[0].price - data[0].changes)) - 1) * 100).toFixed(2)}%)`);
-      ElemFDH.append(price);
+      const price = $("<span class='p-2 fs-5 border-2 rounded'>").text(` ${data[0].price} `);
+      // condicional formating based on the variation
+      const variation = $(( (((data[0].price / (data[0].price - data[0].changes)) - 1) * 100) > 0 ? "<span class='p-2 fs-5 text-success border-2 rounded'>" : "<span class='p-2 fs-5 text-danger border-2 rounded'>")).text(` ${data[0].price} (${(((data[0].price / (data[0].price - data[0].changes)) - 1) * 100).toFixed(2)}%)`);
+      ElemFDH.append(variation);
 
       const beta = $("<p class='m-2 pb-2 border-bottom' style='font-size: smaller'>").text(`Beta: ${data[0].beta}`);
       const volume = $("<p class='m-2 pb-2 border-bottom' style='font-size: smaller'>").text(`Volume: ${data[0].volAvg}`);
       const dayRange = $("<p class='m-2 pb-2 border-bottom' style='font-size: smaller'>").text(`Day Range: ${data[0].range}`);
       const open = $("<p class='m-2 pb-2 border-bottom' style='font-size: smaller'>").text(`Open: ${(data[0].price - data[0].changes).toFixed(1)}`);
 
-      ElemFDH.append(compName, price);
+      ElemFDH.append(compName, variation);
       ElemFDR.append(volume, open, dayRange, beta);
       console.log(data);
     });
@@ -97,8 +99,9 @@ function forexPrice() {
         return response.json();
       })
       .then(function (data) {
-        const code = $("<p class='m-2'>").text(`${currecy[i]}`);
-        const variation = $("<p class='m-2'>").text(`${data[0].bid} (${(data[0].changes * 100).toFixed(2)}%)`);
+        const code = $("<p class='mt-3 text-info fw-bold'>").text(`${currecy[i]}`);
+        // condicional formating based on the variation
+        const variation = $(( data[0].changes > 0 ? "<p class='m-0 text-success fw-bold'>" : "<p class='m-0 text-danger fw-bold'>")).text(`${data[0].bid} (${(data[0].changes * 100).toFixed(2)}%)`);
         ElemForex.append(code, variation);
       })
   })
@@ -106,7 +109,7 @@ function forexPrice() {
 
 
 function indexPrice() {
-  var currecy = [['SPY','S&P 500'],['',''],['','']];
+  var currecy = [['SPY','S&P 500']];
   $.each(currecy, function (i, v) {
     let queryURL = `https://financialmodelingprep.com/api/v3/profile/${v[0]}?apikey=${APIKey2}`;
     fetch(queryURL)
@@ -114,8 +117,9 @@ function indexPrice() {
         return response.json();
       })
       .then(function (data) {
-        const code = $("<p class='m-2'>").text(`${currecy[i][1]}`);
-        const variation = $("<p class='m-2'>").text(`${(((data[0].price / (data[0].price - data[0].changes)) - 1) * 100).toFixed(2)}%`);
+        const code = $("<p class='mt-3 text-info fw-bold'>").text(`${currecy[i][1]}`);
+        // condicional formating based on the variation
+        const variation = $((((data[0].price / (data[0].price - data[0].changes)) - 1) > 0 ? "<p class='m-0 text-success fw-bold'>" : "<p class='m-0 text-danger fw-bold'>" )).text(`${(((data[0].price / (data[0].price - data[0].changes)) - 1) * 100).toFixed(2)}%`);
         ElemForex.append(code, variation);
       })
   })
