@@ -4,22 +4,31 @@ window.onload = function () {
   const ElemInp = $("#ticker-code");
   const Elemhistory = $("#history-section");
 
-  ElemForm.on("submit", function (e) {
+  function callAPI(e) {
     e.preventDefault();
     const thicker = ElemInp.val().trim();
-    if (thicker !== "") {
-//      renderGraph(thicker);
-//      fundamentalData(thicker);
-//      forexPrice();
-//      indexPrice();
+    if (thicker !== "" && e.type === "submit") {
+      renderGraph(thicker);
+      fundamentalData(thicker);
+      forexPrice();
+      indexPrice();
       addHistory(thicker);
       ElemInp.val("");
+    }
+    else if (e.type === "click") {
+      renderGraph($(this).attr("data-stock"));
+      fundamentalData($(this).attr("data-stock"));
+      forexPrice();
+      indexPrice();
     }
     else {
       alert("Input a valid stock ticker!");
     }
+  }
 
-  })
+  // Added event listening   
+  ElemForm.on("submit", callAPI);
+  Elemhistory.on("click", "button", callAPI);
 
   renderButtons();
 

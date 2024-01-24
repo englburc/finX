@@ -8,7 +8,7 @@ function renderGraph(thicker) {
   // created a chart object
   var stockChart = new CanvasJS.StockChart("line-chart", {
     zoomEnabled: true,
-    animationEnabled: true,
+    animationEnabled: false,
 
     // call back function to change the axis Y max value
     rangeChanged: function (e) {

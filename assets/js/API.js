@@ -45,7 +45,7 @@ function fundamentalData(thicker) {
       ElemFDH.empty();
       ElemFDR.empty();
       ElemFDL.empty();
-      const compName = $("<p class='p-2 fs-5 border-2 rounded'>").text(`${data[0].companyName} (${data[0].symbol})`);
+      const compName = $("<p class='p-2 fs-5 border-2 rounded' id='name-company'>").text(`${data[0].companyName} (${data[0].symbol})`);
       const variation = $(( (((data[0].price / (data[0].price - data[0].changes)) - 1) * 100) > 0 ? "<span class='p-2 fs-5 text-success border-2 rounded'>" : "<span class='p-2 fs-5 text-danger border-2 rounded'>")).text(` ${data[0].price} (${(((data[0].price / (data[0].price - data[0].changes)) - 1) * 100).toFixed(2)}%)`);
 //      ElemFDH.append(variation);
 
