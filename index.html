@@ -67,32 +67,26 @@
 
     <!-- Graph Data Section -->
     <main>
-        <div class="container-fluid text-center"></div>
         <div class="row">
-            <div class="col-3" id="fundamental-data">
+            <div class="col-3 ps-4 pe-0" id="fundamental-data">
                 <div class="row">
-                    <div class="m-2 flex gap-2" id="fundamental-data-header"></div>
+                    <div class="mt-2 mb-4 ms-2 p-0 flex gap-2" id="fundamental-data-header"></div>
                 </div>
                 <div class="row">
-                    <div class="col" id="fundamental-data-left"></div>
-                    <div class="col" id="fundamental-data-right"></div>
+                    <div class="col ps-1" id="fundamental-data-left"></div>
+                    <div class="col p-0" id="fundamental-data-right"></div>
                 </div>
-                <p class="m-2">ToDo CSS, font-size, adjust margin, etc...</p>
-                <!-- Need to add <aside> for left side content -->
             </div>
             <div class="col-7 p-0">
                 <div class="m-2 chart" id="line-chart" style="height: 350px">
-                    <!-- <div id="line-chart" style="height: 400px; width: 600px;"></div> -->
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <p class="m-2" id="timer">Time</p>
+                    <p class="m-2 fw-bolder text-center" id="timer">Time</p>
                 </div>
                 <div class="row" id="forex-price">
-                    <p class="m-2">ToDo CSS, font-size, adjust margin, etc...</p>
                 </div>
-                <!-- Need to add <aside> for right side content -->
             </div>
         </div>
         <div class="row">
@@ -106,17 +100,11 @@
 
     <!-- Add Footer -->
     <footer>
-        <nav>
-            <ul
-                class="flex flex-row items-center justify-between  p-4 bg-mirage text-white list-none borderRadius-lg border border-gray-500 mt-1 mb-0">
-                <li class="items-start"><a href="#financeDashboard">Finance Dashboard</a></li>
-                <li class="items-center"> <a href="#searchstockTickerCode">Search Stock Ticker Code </a>
-                    <p class="fluid">This project was created by ...</p>
-                </li>
-                <li class="items-end"><a href="#back-to-the-top">Back to the Top</a></li>
-            </ul>
+        <nav class="p-2 bg-mirage text-center text-white mt-1 mb-0 fixed-bottom">
+            <p>Created by P6-1 Group</p>
         </nav>
     </footer>
+
     <!-- Custom JS -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/API.js"></script>
