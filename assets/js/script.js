@@ -52,7 +52,11 @@ window.onload = function () {
         $.each(historyStorage, function (i, v) {
           const ElemButton = $("<button class='m-2 p-2 fs-5 border-2 rounded bg-primary-subtle'>").attr("type", "button");
           ElemButton.attr("data-stock", v);
-          ElemButton.text(v);
+          let actualPrice = buttonData(v);
+          actualPrice.then(function (result) {
+            console.log(result[0]);
+            ElemButton.text(`${result[0].symbol} - ${result[0].name} ${result[0].price} (${result[0].changesPercentage.toFixed(2)}%)`);
+          });
           Elemhistory.prepend(ElemButton);
         })
       }
@@ -60,7 +64,11 @@ window.onload = function () {
     else {
       const ElemButton = $("<button class='m-2 p-2 fs-5 border-2 rounded bg-primary-subtle'>").attr("type", "button");
       ElemButton.attr("data-stock", stock);
-      ElemButton.text(stock);
+      let actualPrice = buttonData(stock);
+      actualPrice.then(function (result) {
+        console.log(result[0]);
+        ElemButton.text(`${result[0].symbol} - ${result[0].name} ${result[0].price} (${result[0].changesPercentage.toFixed(2)}%)`);
+      });
       Elemhistory.prepend(ElemButton);
     }
   }
