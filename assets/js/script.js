@@ -32,11 +32,11 @@ window.onload = function () {
 
   renderButtons();
 
-  $('#timer').text(dayjs().format('YYYY-MM-DD HH:mm'));
+  $('#timer').text(dayjs().format('DD-MM-YYYY h:mmA'));
 
   function showtime() {
     const timeInterval = setInterval(function () {
-      $('#timer').text(dayjs().format('YYYY-MM-DD HH:mm'));
+      $('#timer').text(dayjs().format('DD-MM-YYYY h:mmA'));
     }, 60000);
   }
   showtime()

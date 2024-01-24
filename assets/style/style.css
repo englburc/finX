@@ -10,3 +10,16 @@
 .row{
     margin-right: 0 !important;
 }
+
+/* Make the placeholder more visible */
+.ticker-placeholder::placeholder {
+    color: #ced4da;
+    opacity: 1;
+  }
+
+  /* Responsivenss for Navbar */
+@media screen and (min-width: 320px) and (max-width: 820px) {
+    .sm-hidden {
+        display: none !important;
+    }
+}
