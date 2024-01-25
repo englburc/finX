@@ -1,8 +1,8 @@
 const APIKey = '3be0c4ff92mshf3ed26e5ff73578p1884ecjsn26894e084b86';
-const APIKey2 = "953885df4638d574a52f632a950ea2b3";
+const APIKey2 = "5ab31f1e6c6bcfdebd17fc608c2d7123";
 //TcSAvBTZl318Z8WuUz8XSJQFRnjScxv6
 // Use it just in the appresentation
-//const APIKey2 = "g2PtREXHUtUFvq9TqT2kXHdmXdL3gQ0n";
+//const APIKey2 = "5ab31f1e6c6bcfdebd17fc608c2d7123";
 
 const url = 'https://alpha-vantage.p.rapidapi.com/query?';
 const options = {
