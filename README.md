@@ -45,9 +45,7 @@ To use this dashboard successfully, the stock ticker code for the company must b
 
 
 ## Product
-
-https://ukvirtfept112-y1j3057.slack.com/files/U063U3F7SVA/F06G8F6ACJC/finx-demo-gif.gif
-
+![finx-demo-gif](https://github.com/englburc/finX/assets/126266157/cf137ab5-d88e-4fa5-a5f2-10181b79d65a)
 
 ## Design draft
 ![Wireframe](./assets/img/wireframe_finx.png)
