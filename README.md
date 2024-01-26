@@ -10,7 +10,9 @@ This project provides a terminal-like data and information about the shares of p
 * [Link-to-repo](#link-to-repo)
 * [Final Project View](#final-product)
 * [MDesign draft](#design-draft)
+* [References](#references)
 * [Authors](#authors)
+* [Credits](#credits)
 * [License](#license)
 
 ## Functionality features
@@ -37,11 +39,23 @@ To use this dashboard successfully, the stock ticker code for the company must b
 ## Design draft
 ![readme_wireframe](https://github.com/englburc/finX/assets/126266157/8c12581d-c968-4a4e-8cac-e11f41981203)
 
+## References 
+- [localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
+- [JQuery](https://jquery.com/)
+- [Day.js](https://day.js.org/en/)
+- [Canvas.js](https://canvasjs.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Financial Modeling Prep API](https://site.financialmodelingprep.com/)
+- [Alpha Vantage API](https://rapidapi.com/alphavantage/api/alpha-vantage/)
+
 ## Authors
 - Adebayo
 - Igor
 - Levan
 - Pena
+
+## Credits
+[edX - Bootcamp in Front-End Web Development](https://www.edx.org/course/skills-bootcamp-in-front-end-web-development?parent_component=new-on-edx&webview=false&campaign=Skills+Bootcamp+in+Front-End+Web+Development&source=edx&product_category=boot-camp&placement_url=https%3A%2F%2Fwww.edx.org%2F)
 
 ## License
 - This application is covered under: 
