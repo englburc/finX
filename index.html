@@ -44,6 +44,7 @@
             <div class="w-100 block d-lg-flex align-items-lg-center w-auto sm-hidden">
                 <h2 class="fs-3 fw-semibold text-white">Finance Dashboard</h2>
             </div>
+            <!-- Form takes user input to retrieve data from API-->
             <form id="stock-form">
                 <div>
                     <input type="text" id="ticker-code"
@@ -54,40 +55,48 @@
         </nav>
     </header>
 
+
     <!-- Graph Data Section -->
     <main>
-        <div class="row">
-            <div class="col-3 ps-4 pe-0" id="fundamental-data">
-                <div class="row">
-                    <div class="mt-2 mb-2 ms-2 p-0 d-flex gap-2" id="fundamental-data-header"></div>
+        <!-- Responds to full width of device-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 pe-0" id="fundamental-data">
+                    <!-- Shows the time at the top on smaller devices-->
+                    <div class="d-sm-block text-center text-lg-start d-lg-none mt-2 p-2 fw-bolder border border-2 rounded" id="time-sm">
+                        <p>Time</p>
+                    </div>
+                    <div class="d-flex">
+                        <div class="mt-2 mb-2 p-0 d-flex gap-2 w-100" id="fundamental-data-header"></div>
+                    </div>
+                    <!-- Displays data retrieved from finance API-->
+                    <div class="d-flex">
+                        <div class="col ps-1" id="fundamental-data-left"></div>
+                        <div class="col p-0" id="fundamental-data-right"></div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col ps-1" id="fundamental-data-left"></div>
-                    <div class="col p-0" id="fundamental-data-right"></div>
+                <!-- Displays chart retrieved from canvas.js API -->
+                <div class="col-lg-7 pe-0">
+                    <div class="m-2 chart" id="line-chart" style="height: 300px"></div>
+                </div>
+                <div class="col-lg-2 pe-0 text-center text-lg-start">
+                    <!-- Shows the time on the right on larger devices-->
+                    <div class="d-none d-lg-block mt-2 p-2 fw-bolder border border-2 rounded" id="timer">
+                        <p>Time</p>
+                    </div>
+                    <div class="row py-2 py-lg-0" id="forex-price">
+                    </div>
                 </div>
             </div>
-            <div class="col-7 p-0">
-                <div class="m-2 chart" id="line-chart" style="height: 300px">
+            <div class="row">
+                <div class="col rounded-1 border border-light-subtle me-4 ms-4 mt-2 mb-2 p-0" id="history-section">
                 </div>
             </div>
-            <div class="col">
-                <div class="row">
-                    <p class="m-2 py-1 fw-bolder border border-2 rounded" id="timer">Time</p>
-                </div>
-                <div class="row" id="forex-price">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col rounded-1 border border-light-subtle me-4 ms-4 mt-2 mb-2 p-0" id="history-section"
-                >
-            </div>
-        </div>
         </div>
     </main>
 
     <!-- Footer Section -->
-    <footer class="footer mt-auto py-3 bg-mirage fixed-bottom">
+    <footer class="footer mt-auto py-3 bg-mirage fixed-lg-bottom">
         <nav class="container text-center">
             <span class="text-white">Created by POD 6 - Group 1</span>
         </nav>
