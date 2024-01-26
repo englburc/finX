@@ -33,6 +33,7 @@ window.onload = function () {
   renderButtons();
 
   $('#timer').text(dayjs().format('DD-MM-YYYY h:mmA'));
+  $('#time-sm').text(dayjs().format('DD-MM-YYYY h:mmA'));
 
   function showtime() {
     const timeInterval = setInterval(function () {
