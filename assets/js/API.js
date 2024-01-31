@@ -1,5 +1,5 @@
 const APIKey = '3be0c4ff92mshf3ed26e5ff73578p1884ecjsn26894e084b86';
-const APIKey2 = "5ab31f1e6c6bcfdebd17fc608c2d7123";
+const APIKey2 = "TcSAvBTZl318Z8WuUz8XSJQFRnjScxv6";
 //TcSAvBTZl318Z8WuUz8XSJQFRnjScxv6
 // Use it just in the appresentation
 //const APIKey2 = "5ab31f1e6c6bcfdebd17fc608c2d7123";
